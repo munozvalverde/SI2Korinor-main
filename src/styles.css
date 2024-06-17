@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.card{
+  @apply relative overflow-x-auto shadow-md ;
+}
+.btngray{
+  @apply px-4 py-2 text-sm font-bold  text-brown-gray-600 border border-brown-gray-700 rounded-md hover:bg-brown-gray-400 hover:text-white
+}

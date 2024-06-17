@@ -1,0 +1,67 @@
+<div class="card">
+  <div class="flex justify-between mb-4">
+    <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+       Horario
+    </h2>
+    <a [routerLink]="['/horario/crear']" class="btngray">Crear Nuevo Horario</a>
+  </div>
+  <div class="relative overflow-x-auto rounded-lg">
+    <table
+    class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  >
+    <thead
+      class="text-xs text-gray-700 uppercase bg-brown-gray-200 dark:bg-gray-700 dark:text-gray-400"
+    >
+        <tr>
+          <th scope="col" class="px-6 py-3">ID</th>
+          <th scope="col" class="px-6 py-3">Materia</th>
+          <th scope="col" class="px-6 py-3">Grupo</th>
+          <th scope="col" class="px-6 py-3">Dia</th>
+          <th scope="col" class="px-6 py-3">Hora Inicio</th>
+          <th scope="col" class="px-6 py-3">Hora Fin</th>
+          <th scope="col" class="px-6 py-3">Aula</th>
+          <th scope="col" class="px-6 py-3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let horario of horarios"
+          class="bg-white dark:bg-gray-800 hover:bg-brown-gray-100 dark:hover:bg-gray-600"
+      >
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >
+            {{ horario.id }}
+          </th>
+          <td class="px-6 py-4">
+            {{ horario.materia.nombre }}
+          </td>
+          <td class="px-6 py-4">
+            {{ horario.grupo.sigla }}
+          </td>
+
+          <td class="px-6 py-4">
+            {{ horario.dia }}
+          </td>
+          <td class="px-6 py-4">
+            {{ horario.horaInicio }}
+          </td>
+          <td class="px-6 py-4">
+            {{ horario.horaFin }}
+          </td>
+          <td class="px-6 py-4">
+            {{ horario.aula.numero }}
+          </td>
+          <td class="px-6 py-4">
+            <a
+              [routerLink]="['/horario/editar', horario.id]"
+              class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+            > Edit</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

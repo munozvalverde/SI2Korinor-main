@@ -1,0 +1,71 @@
+<div class="card">
+  <div class="flex justify-between mb-4">
+    <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+       Programacion academica
+    </h2>
+    <a [routerLink]="['/carga-horaria/crear']" class="btngray">Crear nueva programacion academica</a>
+  </div>
+  <div class="relative overflow-x-auto rounded-lg">
+    <table
+    class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  >
+    <thead
+      class="text-xs text-gray-700 uppercase bg-brown-gray-200 dark:bg-gray-700 dark:text-gray-400"
+    >
+        <tr>
+          <th scope="col" class="px-4 py-3">ID</th>
+          <th scope="col" class="px-4 py-3">Fecha</th>
+          <th scope="col" class="px-4 py-3">Gestión</th>
+          <th scope="col" class="px-4 py-3">Docente</th>
+          <th scope="col" class="px-4 py-3">Materia</th>
+          <th scope="col" class="px-4 py-3">Grupo</th>
+          <th scope="col" class="px-4 py-3">Día</th>
+          <th scope="col" class="px-4 py-3">Hora</th>
+          <th scope="col" class="px-3 py-3">Aula</th>
+          <th scope="col" class="px-4 py-3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let carga of cargas"
+          class="bg-white dark:bg-gray-800 hover:bg-brown-gray-100 dark:hover:bg-gray-600"
+      >
+          <th
+            scope="row"
+            class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >
+            {{ carga.id }}
+          </th>
+          <td class="px-4 py-4">{{ carga.fecha | date : "dd-MM-yyyy" }}</td>
+          <td class="px-4 py-4">{{ carga.gestion.nombre }}</td>
+          <td class="px-4 py-4">{{ carga.docente.nombre }}</td>
+          <td class="px-4 py-4">{{ carga.materia.nombre }}</td>
+          <td class="px-4 py-4">{{ carga.grupo.sigla }}</td>
+          <td class="px-4 py-4">
+            <ul>
+              <li *ngFor="let horario of carga.horarios">{{ horario.dia }}</li>
+            </ul>
+          </td>
+          <td class="px-3 py-4">
+            <div *ngFor="let horario of carga.horarios">
+              <div>{{ horario.horaInicio }}</div>
+              <div>{{ horario.horaFin }}</div>
+            </div>
+          </td>
+          <td class="px-3 py-4">
+            <ul>
+              <li *ngFor="let horario of carga.horarios">{{ horario.aula }}</li>
+            </ul>
+          </td>
+          <td class="px-4 py-4">
+            <a
+              [routerLink]="['/carga-horaria/editar', carga.id]"
+              class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+            >Editar
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

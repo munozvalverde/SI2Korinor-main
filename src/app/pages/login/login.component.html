@@ -1,0 +1,86 @@
+<div class="bg-white font-sans h-screen p-5">
+  <div
+    class="flex flex-col items-center justify-center h-[575px] 2xl:h-[870px] bg-gray-100"
+  >
+    <div
+      class="flex flex-col sm:flex-row bg-gradient-to-r from-custom-brown via-custom-brown-dark to-custom-brown-dark rounded-lg overflow-hidden max-w-4xl h-[400px]"
+    >
+      <div class="flex-1 p-8">
+        <h2
+          class="text-8xl font-bold mb-4 text-white flex items-center justify-center"
+        >
+          <i class="fa-solid fa-user"></i>
+        </h2>
+        <div class="flex items-center justify-center px-5">
+          <p class="text-white text-5xl flex items-center justify-center px-9">
+            Univ-Sys
+          </p>
+        </div>
+      </div>
+      <div class="flex-1 bg-gray-300 rounded-lg p-8 w-[500px]">
+        <form (ngSubmit)="onLogin()" class="relative mb-6 py-12">
+          <div class="flex lg:mb-7 xl:mb-10 2xl:mb-14">
+            <label
+              for="email"
+              class="font-semibold absolute text-sm xl:text-lg 2xl:text-xl text-gray-500 -translate-y-5 xl:-translate-y-7"
+              >Tu usuario</label
+            >
+            <input
+              type="text"
+              [(ngModel)]="username"
+              name="email"
+              id="email"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Correo Electrónico"
+              required
+            />
+          </div>
+          <div class="flex lg:mb-4 xl:mb-7">
+            <label
+              for="password"
+              class="font-semibold absolute text-sm xl:text-lg 2xl:text-xl text-gray-500 -translate-y-5 xl:-translate-y-7"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              [(ngModel)]="password"
+              name="password"
+              id="password"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Contraseña"
+              required
+            />
+          </div>
+          <div class="flex lg:mb-4 xl:mb-7">
+            <div class="flex items-start">
+              <div class="flex items-center h-full">
+                <input
+                  id="remember"
+                  aria-describedby="remember"
+                  type="checkbox"
+                  class="w-4 h-4 border border-gray-300 rounded-lg bg-gray-50"
+                />
+              </div>
+              <div class="ml-3 text-sm">
+                <label
+                  for="remember"
+                  class="text-gray-500 text-sm xl:text-lg 2xl:text-xl"
+                  >Recuérdame</label
+                >
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="w-full text-white bg-custom-brown-dark hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm xl:text-lg 2xl:text-xl px-5 py-2.5 me-2 mb-2"
+              (click)="onLogin()"
+            >
+              Acceder
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
