@@ -153,7 +153,7 @@ export const routes: Routes = [
       },
       {
         path: 'carrera-materia',
-        title: 'Carrea Materia',
+        title: 'Carrera Materia',
         component: CarreraMateriaComponent,
         children: [
           {

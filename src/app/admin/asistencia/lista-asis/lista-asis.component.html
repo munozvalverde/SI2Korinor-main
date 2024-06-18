@@ -3,7 +3,7 @@
     <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
        Asistencia
     </h2>
-    
+    <a [routerLink]="['/asistencia/crear']" class="btngray">Crear</a>
   </div>
   <div class="relative overflow-x-auto rounded-lg">
     <table
@@ -14,9 +14,11 @@
     >
         <tr>
           <th scope="col" class="px-6 py-3">ID</th>
-          <th scope="col" class="px-6 py-3">Estado</th>
           <th scope="col" class="px-6 py-3">Fecha</th>
           <th scope="col" class="px-6 py-3">Hora</th>
+          <th scope="col" class="px-6 py-3">Estado</th>
+          <th scope="col" class="px-6 py-3">Nombre</th>
+          <th scope="col" class="px-6 py-3">Apellido</th>
           <th scope="col" class="px-6 py-3">Observacion</th>
           <th scope="col" class="px-6 py-3">Horario</th>
         </tr>
@@ -33,14 +35,18 @@
             {{ asistencia.id }}
           </th>
           <td class="px-6 py-4">
-            {{ asistencia.estado }}
-          </td>
-          <td class="px-6 py-4">
             {{ asistencia.fecha | date : "dd-MM-yyyy" }}
           </td>
           <td class="px-6 py-4">
             {{ asistencia.hora }}
           </td>
+          <td class="px-6 py-4">
+            {{ asistencia.estado }}
+          </td>
+          
+          <th scope="col" class="px-6 py-3">Nombre</th>
+          <th scope="col" class="px-6 py-3">Apellido</th>
+
           <td class="px-6 py-4">
             {{ asistencia.observacion }}
           </td>
@@ -48,13 +54,7 @@
             {{ asistencia.horario.dia }}
             <p></p>
           </td>
-          <td class="px-6 py-4">
-            <a
-              [routerLink]="['/asistencia/editar', asistencia.id]"
-              class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >Edit</a
-            >
-          </td>
+          
         </tr>
       </tbody>
     </table>
